@@ -33,7 +33,7 @@ client.on("message", async message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
-  commands.checkCommand(cmd, message);
+  await commands.checkCommand(cmd, message);
 });
 
-client.login("NjkyODE2NzQ1NzI3MDAwNjM3.Xn0D5A.9dzMNDwh1ZHgBeXQ_JjRZAedZ4M");
+client.login("NjkyODE2NzQ1NzI3MDAwNjM3.Xn4G2A.VCm8954yIGBrct3ZyLJHZB9drc0");

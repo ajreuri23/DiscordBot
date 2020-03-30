@@ -15,13 +15,7 @@ config({
 client.on("ready", () => {
   console.log("Im online!");
 
-  client.user.setPresence({
-    status: "Online",
-    game: {
-      name: "I'm getting developed",
-      type: "WATCHING"
-    }
-  });
+  client.user.setActivity('Im getting developed', {type:0});
 });
 
 client.on("message", async message => {
@@ -33,7 +27,8 @@ client.on("message", async message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
-  await commands.checkCommand(cmd, message);
+  const messageFormatted = message.content.split(' ').slice(1).join(' ');
+  await commands.checkCommand(cmd, message,messageFormatted);
 });
 
-client.login("NjkyODE2NzQ1NzI3MDAwNjM3.Xn4G2A.VCm8954yIGBrct3ZyLJHZB9drc0");
+client.login("NjkyODE2NzQ1NzI3MDAwNjM3.Xn7CpA.lc6vHsXfqJEhAHDOUNZ3kjdx-tI");

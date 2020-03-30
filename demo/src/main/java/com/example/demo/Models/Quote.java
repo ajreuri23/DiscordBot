@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name = "t_quotes")
 public class Quote {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty
     @Column(name = "id")
     private Integer id;
@@ -22,5 +22,20 @@ public class Quote {
                 "id=" + id +
                 ", quote='" + quote + '\'' +
                 '}';
+    }
+
+    public Boolean equals(Quote otherQuote) {
+        if(this.quote.equals(otherQuote.getQuote())) {
+            return true;
+        }
+        return false;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getQuote() {
+        return quote;
     }
 }
